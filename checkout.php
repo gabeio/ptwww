@@ -3,9 +3,8 @@ define('active','');
 include_once 'header.php';
 require_once '../mysqliconnect.php';
 $db = new mysqli(hostname,username,password,database);
-if ($db->connect_errno > 0)
-{
-	echo "Failed to connect to MySQL: " . $db->connect_error();
+if ($db->connect_error){
+	echo "Failed to connect to MySQL: " . $db->connect_error;
 	exit();
 }
 
