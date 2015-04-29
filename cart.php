@@ -40,7 +40,8 @@ if(!$result = $db->query($sql)){
 $sql = "SELECT SUM(price)
 FROM `cart`
 JOIN `book`
-ON cart.book_id = book.book_id";
+ON cart.book_id = book.book_id
+AND cart.user_id = 1";
 if(!$result = $db->query($sql)){
 	echo 'v0 There was an error running the query [' . $db->error . ']';
 }else{
