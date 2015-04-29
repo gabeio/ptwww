@@ -19,7 +19,7 @@ if(!$db->query($sql)){
 		echo 'v0 There was an error running the query [' . $db->error . ']';
 	}else{
 		while($row = $result->fetch_assoc()){
-			echo '<p>Thank You, '.$row['lastName'].', '.$row['firstName'].' for puchasing with us.</p>';
+			echo '<p>Thank You, ' . $row['lastName'] . ', ' . $row['firstName'] . ' for puchasing with us.</p>';
 		}
 		$result->free();
 	}
