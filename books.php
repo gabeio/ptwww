@@ -29,7 +29,6 @@ ORDER BY item.book_id;";
 if(!$result = $db->query($sql)){ // sets and checks results for errors-ish
     die('There was an error running the query [' . $db->error . ']');
 }else{
-	$current_id = "";
 	echo '<table class="table table-striped">';
 	echo '<tr><th>Book Title</th><th>Author</th><th>Publisher</th><th>Price (USD)</th><th>Buy</th></tr>';
 	while($row = $result->fetch_assoc()){
@@ -40,7 +39,6 @@ if(!$result = $db->query($sql)){ // sets and checks results for errors-ish
 		echo '<td>$'.$row['price'].'</td>';
 		echo '<td><a class="btn btn-default" href="./addtocart.php?book=' . $row['book_id'] . '"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</a></td>';
 		echo'</tr>';
-		$current_id = $row['book_id'];
 	}
 	echo '</table>';
 	$result->free(); // frees the variable
