@@ -22,6 +22,7 @@
 							<ul class="nav nav-pills pull-right">
 								<li role="presentation"<?php if(active=="books"){echo " class=\"active\"";}?>><a href="./books.php"><span class="glyphicon glyphicon-book"></span> Books</a></li>
 								<li role="presentation"<?php if(active=="cart"){echo " class=\"active\"";}?>><a href="./cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+								<li role="presentation"<?php if(active=="orders"){echo " class=\"active\"";}?>><a href="./orders.php"><span class="glyphicon glyphicon-folder-close"></span> Orders</a></li>
 							</ul>
 						</nav>
 						<h2>Book Store</h2>

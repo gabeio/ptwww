@@ -15,7 +15,7 @@ if(!$result = $db->query($sql)){
 	echo 'v0 There was an error running the query [' . $db->error . ']';
 }else{
 	while($row = $result->fetch_assoc()){
-		echo '<p>Hello, ' . $row['firstName'] . ' ' . $row['lastName'] . '</p>';
+		echo '<p>Hello, '.$row['firstName'].' '.$row['lastName'].'</p>';
 	}
 	$result->free();
 }
@@ -52,11 +52,10 @@ if(!$result = $db->query($sql)){
 			echo '<tr class="success"><td>TOTAL</td><td>$0</tr>';
 		}
 	}
-	echo '<tr><td><a class="btn btn-default" href="./books.php">Continue Shopping</a></td>
-	<td><a class="btn btn-success" href="./checkout.php">Checkout</a></td></tr></table>';
+	echo '<tr><td style="text:center;"><a class="btn btn-default" href="./books.php">Continue Shopping</a></td>
+	<td style="text:center;"><a class="btn btn-success" href="./checkout.php">Checkout</a></td></tr></table>';
 	$result->free();
 }
 
 include_once 'footer.php';
 $db->close();
-?>

@@ -7,8 +7,9 @@ if(empty($_POST['username'])||empty($_POST['password'])){
 }else{
 	require_once '../mysqliconnect.php';
 	$db = new mysqli(hostname,username,password,database);
-	if ($db->connect_error){
-		echo "Failed to connect to MySQL: " . $db->connect_error;
+	if ($db->connect_errno > 0)
+	{
+		echo "Failed to connect to MySQL: " . $db->connect_error();
 		exit();
 	}
 
@@ -34,21 +35,5 @@ if(empty($_POST['username'])||empty($_POST['password'])){
 			}
 		}
 	}
-}
-if($show){
-	include_once 'header.php';
-?>
-<form method="POST">
-	<div class="form-group">
-		<label for="username">Username</label>
-		<input type="text" class="form-control" id="username" placeholder="Username">
-	</div>
-	<div class="form-group">
-		<label for="password">Password</label>
-		<input type="password" class="form-control" id="password" placeholder="Password">
-	</div>
-	<button type="submit" class="btn btn-default">Submit</button>
-</form>
-<?php
 }
 ?>

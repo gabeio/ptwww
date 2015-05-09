@@ -19,7 +19,6 @@ if(!empty($_GET['book'])){
 			exit();
 		}else{
 			header('Location: ./cart.php');
-			echo "<html><head><meta http-equiv=\"refresh\" content=\"0; url=./cart.php\">";
 		}
 	}
 }
